@@ -16,6 +16,7 @@ dist/
 venv/
 .idea/
 .vscode/
+node_modules/
 
 # ---- macOS clutter -----------------------------------------------------
 .DS_Store

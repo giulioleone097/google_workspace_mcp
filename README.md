@@ -192,6 +192,34 @@ Claude Desktop stores these securely in the OS keychain; set them once in the ex
 - **[uvx](https://github.com/astral-sh/uv)** (for instant installation) or [uv](https://github.com/astral-sh/uv) (for development)
 - **Google Cloud Project** with OAuth 2.0 credentials
 
+### Node.js / TypeScript (Next.js Compatible)
+
+The repository now includes a production-ready TypeScript implementation that runs without Python.
+
+```bash
+# Install dependencies
+npm install
+
+# Build TypeScript output
+npm run build
+
+# Start the MCP server (stdio default)
+node dist/cli.js
+
+# HTTP transport
+node dist/cli.js --transport streamable-http
+```
+
+**Using in Next.js**
+
+```ts
+import { createServer } from 'workspace-mcp';
+
+const server = await createServer({ transport: 'streamable-http' });
+```
+
+Configure the same OAuth environment variables (`GOOGLE_OAUTH_CLIENT_ID`, `GOOGLE_OAUTH_CLIENT_SECRET`, etc.) as the Python server.
+
 ### Configuration
 
 <details open>
